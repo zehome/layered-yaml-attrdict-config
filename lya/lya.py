@@ -72,7 +72,7 @@ class AttrDict(OrderedDict):
 
 	@classmethod
 	def from_yaml(cls, path_or_file, if_exists=False):
-		if isinstance(path_or_file, types.StringTypes):
+		if isinstance(path_or_file, str):
 			if if_exists and not os.path.exists(path_or_file): return cls()
 			with open(path_or_file) as src:
 				return cls(yaml.load(src, OrderedDictYAMLLoader))
